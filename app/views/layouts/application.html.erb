@@ -4,12 +4,21 @@
     <title>RailsWikinimous</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
   <body>
+    <div class="d-flex justify-content-between bg-light p-3 mb-5 border-bottom">
+        <%= link_to 'Wikinimous', articles_path, class: 'text-decoration-none text-secondary' %>
+        <div class="d-flex">
+          <%= link_to "add new article", new_article_path, class: 'text-decoration-none text-secondary mr-5' %>
+          <%= link_to 'read articles', read_path, class: 'text-decoration-none text-secondary'  %>
+        </div>
+
+    </div>
+
     <%= yield %>
   </body>
 </html>

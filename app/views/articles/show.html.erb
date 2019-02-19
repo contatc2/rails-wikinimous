@@ -1,2 +1,26 @@
-<h1>Articles#show</h1>
-<p>Find me in app/views/articles/show.html.erb</p>
+<div class="container">
+  <h1 class="pb-5 border-bottom"><%= @article.title %>
+    <%= link_to edit_article_path(@article) do %>
+      <i class="fas fa-pencil-alt" style="font-size: 0.5em"></i>
+    <% end %>
+    <%= link_to article_path(@article), method: :delete, data: { confirm: "are you sure?"} do %>
+      <i class="fas fa-trash-alt" style="font-size: 0.5em"></i>
+    <% end %>
+    <% unless @article.read %>
+      <%= link_to article_path(@article, article: {read: true}), method: :put do %>
+        <i class="fas fa-book" style="font-size: 0.5em"></i>
+        <% end %>
+    <% end %>
+  </h1>
+
+<p><%= @article.content %></p>
+
+
+<%= link_to "back", articles_path  %>
+
+
+
+</div>
+
+
+

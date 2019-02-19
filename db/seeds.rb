@@ -10,8 +10,8 @@ require 'faker'
 puts 'Creating 10 fake articles...'
 10.times do
   Article.create(
-    title: Faker::Lorem.words(4),
-    content: Faker::Lorem.paragraph(2)
+    title: Faker::Book.title,
+    content: Faker::Lorem.paragraph(10)
   )
 end
 puts 'Finished!'
